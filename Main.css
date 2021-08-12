@@ -1,0 +1,19 @@
+body{
+  margin-top: 10px;
+  background-color: beige;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+} 
+
+h1 {
+  font-size: 30pt;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 20pt;
+  text-align: center;
+  margin-top: 0px;
+}
