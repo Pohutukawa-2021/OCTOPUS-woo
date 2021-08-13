@@ -35,10 +35,10 @@ router.post('/good', (req, res) => {
   res.redirect('/bad')
 })
 
-router.get('/ok', (req, res) => {
+router.get('/okay.html', (req, res) => {
   getData(data => {
     const viewData = data
-    res.render('good', viewData)
+    res.render('okay.html', viewData)
   })
 })
 
