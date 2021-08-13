@@ -16,14 +16,30 @@ module.exports = router
 /// route///
 
 router.get('/bad', (req, res) => {
-  const data = getData(cb)
-  const viewData = data
-  res.render('bad', viewData)
+  getData(data => {
+    const viewData = data
+    res.render('good', viewData)
+  })
 })
 
-router.get('/good', (req,res) => {
-  const data = getData(cb)
-  const viewData 
+router.get('/good', (req, res) => {
+  getData(data => {
+    const viewData = data
+    res.render('good', viewData)
+  })
+})
+
+router.post('/good', (req, res) => {
+  const input = req.body.comments
+  writeData(input)
+  res.redirect('/bad')
+})
+
+router.get('/ok', (req, res) => {
+  getData(data => {
+    const viewData = data
+    res.render('good', viewData)
+  })
 })
 
 // router.post('/ok', (req, res) => {
