@@ -7,10 +7,14 @@ module.exports = {
 
 function writeData (input) {
   getData(data => {
-    const newData = data + input
+    const Data = {
+      ...data
+    }
+    Data.comments.push(input)
     try {
       const filepath = path.join(__dirname, 'data.json')
-      const stringData = JSON.stringify(newData, null, 2)
+      const stringData = JSON.stringify(Data, null, 2)
+      console.log(stringData)
       fs.writeFile(filepath, stringData, 'utf8', (err) => {
         if (err) {
           console.error(err.message)
