@@ -36,7 +36,7 @@ router.post('/good', (req, res) => {
 })
 
 router.get('/okay', (req, res) => {
-  res.sendFile(path.join(__dirname, 'okay.html'))
+  res.sendFile(path.join(__dirname, 'public/okay.html'))
 })
 
 // router.post('/ok', (req, res) => {

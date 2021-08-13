@@ -17,7 +17,7 @@ server.set('view engine', 'hbs')
 module.exports = server
 
 server.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '/Main.html'))
+  res.sendFile(path.join(__dirname, '/public/Main.html'))
 })
 
 server.use('/mood', routes)
