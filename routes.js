@@ -1,5 +1,5 @@
 const express = require('express')
-
+const path = require('path')
 const router = express.Router()
 const { getData } = require('./getData')
 const { writeData } = require('./writeData')
@@ -18,7 +18,7 @@ module.exports = router
 router.get('/bad', (req, res) => {
   getData(data => {
     const viewData = data
-    res.render('good', viewData)
+    res.render('bad', viewData)
   })
 })
 
@@ -32,14 +32,11 @@ router.get('/good', (req, res) => {
 router.post('/good', (req, res) => {
   const input = req.body.comments
   writeData(input)
-  res.redirect('/bad')
+  res.redirect('/mood/bad')
 })
 
 router.get('/okay', (req, res) => {
-  getData(data => {
-    const viewData = data
-    res.render('good', viewData)
-  })
+  res.sendFile(path.join(__dirname, 'okay.html'))
 })
 
 // router.post('/ok', (req, res) => {
