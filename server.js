@@ -1,7 +1,8 @@
 const express = require('express')
 const hbs = require('express-handlebars')
-
+const routes = require('./routes')
 const server = express()
+const path = require('path')
 
 // Server configuration
 server.use(express.static('public'))
@@ -15,6 +16,8 @@ server.set('view engine', 'hbs')
 
 module.exports = server
 
-server.get(('/'), (req, res) => {
-  res.send('server working')
+server.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '/Main.html'))
 })
+
+server.use('/mood', routes)
